@@ -2,6 +2,8 @@ from infra.config.database import DatabaseConnection
 from domain.cliente import Cliente
 from domain.cliente_repository import ClienteRepositoryInterface
 from infra.shared.logger import logger
+from infra.shared.exceptions import DatabaseQueryError   # <-- Import de la excepción específica
+
 
 class ClientesRepositoryPg(ClienteRepositoryInterface):
 
@@ -31,5 +33,7 @@ class ClientesRepositoryPg(ClienteRepositoryInterface):
             return clientes
 
         except Exception as e:
-            logger.error(f"Error consultando Postgres: {str(e)}")
-            raise Exception("No fue posible obtener los clientes desde la base de datos.")
+            logger.error("Error consultando Postgres: %s", e)   # <-- Sin f-string
+            raise DatabaseQueryError(
+                "No fue posible obtener los clientes desde la base de datos."
+            ) from e   # <-- Excepción específica con causa

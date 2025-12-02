@@ -18,5 +18,5 @@ def listar_clientes_handler():
         use_case = ListarClientesUseCase(repo)
         return use_case.ejecutar()
     except Exception as e:
-        logger.error(f"Fallo en handler GET /clientes")
+        logger.error("Fallo en handler GET /clientes: %s", e)
         raise HTTPException(status_code=500, detail= str(e))

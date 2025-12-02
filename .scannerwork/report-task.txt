@@ -2,5 +2,5 @@ projectKey=HU002_ListarClientes
 serverUrl=http://localhost:9000
 serverVersion=25.11.0.114957
 dashboardUrl=http://localhost:9000/dashboard?id=HU002_ListarClientes
-ceTaskId=36198472-e2ef-4541-86a0-6415fe4b3e80
-ceTaskUrl=http://localhost:9000/api/ce/task?id=36198472-e2ef-4541-86a0-6415fe4b3e80
+ceTaskId=c8d1f62e-2d09-4252-8d4f-25eab3b9c4a5
+ceTaskUrl=http://localhost:9000/api/ce/task?id=c8d1f62e-2d09-4252-8d4f-25eab3b9c4a5
